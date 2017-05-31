@@ -12,7 +12,9 @@ class Order < ApplicationRecord
         amount: self.price,
         order_name: self.name,
         order_number: self.id,
-        quantity: '1'
+        quantity: '1',
+        notify_url: "#{Rails.application.secrets.app_host}/hook"
+
     }
     "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
   end
