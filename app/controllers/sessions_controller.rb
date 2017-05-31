@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         if user.email_confirmed
             session[:user_id] = user.id
             flash[:success] = "Loggin suceessfully"
-            redirect_to "/"
+            redirect_to orders_url
         else
           flash.now[:error] = 'Please activate your account by following the 
           instructions in the account confirmation email you received to proceed'

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :payment]
 
   # GET /orders
   # GET /orders.json
@@ -20,6 +20,15 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
   end
+
+  def payment    
+    if @order
+      redirect_to @order.paypal_url(order_path(@order))
+    else
+      redirect_to orders_url, notice: 'Order was not found.'
+    end    
+  end
+
 
   # POST /orders
   # POST /orders.json
