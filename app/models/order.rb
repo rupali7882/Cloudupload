@@ -1,14 +1,12 @@
 class Order < ApplicationRecord
 
-
-
   def paypal_url(return_path)
     values = {
         business: "rupali.dev89-facilitator@gmail.com",
         cmd: "_xclick",
         upload: 1,
         return: "#{Rails.application.secrets.app_host}#{return_path}",
-        invoice: id,
+        invoice: self.id,
         amount: self.price,
         order_name: self.name,
         order_number: self.id,
