@@ -1,0 +1,4 @@
+BASE_KEY: "EncryptDecryptGurudathBN"
+ALGORITHM: "AES-128-ECB"
+
+# electronic code bloack [ECB]

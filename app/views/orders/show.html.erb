@@ -1,0 +1,33 @@
+<div class="container">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @order.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @order.price %>
+</p>
+
+<div> <%=link_to "payment", @order.paypal_url(root_path(@order)),:class=>"btn btn-primary  "%></div>
+
+<!--   <div>
+   <%#= form_tag paypal_path do %>
+    <%#= label_tag "Please Pay the amount" %>
+    <%#= hidden_field_tag :amount, 500 %>
+    <%#= hidden_field_tag :violation_id,454 %>
+    <%#= image_submit_tag "https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" %> 
+   <%#end %>
+   </div>  -->
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
+</div>
