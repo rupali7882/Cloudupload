@@ -6,7 +6,7 @@ class Order < ApplicationRecord
         cmd: "_xclick",
         upload: 1,
         return: "#{Rails.application.secrets.app_host}#{return_path}",
-        invoice: self.id,
+        invoice: 1_000_000 + Random.rand(10_000_000 - 1_000_000),
         amount: self.price,
         order_name: self.name,
         order_number: self.id,

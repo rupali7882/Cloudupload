@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 	include ApplicationHelper
+	  has_many :conversations, :foreign_key => :sender_id
+
 	mount_uploader :avatar, AvatarUploader
     has_secure_password
 	before_create :encript_ep, :confirmation_token 

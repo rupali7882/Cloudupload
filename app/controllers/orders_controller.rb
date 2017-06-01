@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => [:hook]
   before_action :set_order, only: [:show, :edit, :update, :destroy, :payment]
 
   # GET /orders
@@ -72,7 +73,10 @@ class OrdersController < ApplicationController
 
 
     def hook
-      debugger
+      OrderTransjection.create(:order_id => params[:invoice], :transaction_id => params[:txn_id],
+        :ip_address => params[:ipn_track_id])
+      puts"++++++PayPal Response+++++++++#{params.inspect}"
+      render :json => {message: 'Request handled successfully.', status: 200}
     end
 
   private

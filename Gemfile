@@ -38,6 +38,11 @@ gem "mime-types"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
+gem 'private_pub'
+gem 'thin'
+
 gem 'paypal-sdk-rest'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

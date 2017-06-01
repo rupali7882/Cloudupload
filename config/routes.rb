@@ -16,8 +16,10 @@ Rails.application.routes.draw do
 
   get '/payment/:id' => 'orders#payment'
 
-
-  resources :users, :except =>[:create,:new] do
+  resources :conversations do
+      resources :messages
+    end
+    resources :users, :except =>[:create,:new] do
     member do
       get :confirm_email
       get :edit_password_reset

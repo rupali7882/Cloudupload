@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>EnDeApp</title>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
@@ -10,6 +11,7 @@
 <body>
 
 <%= render "layouts/flash_messages", flash: flash %> 
+<meta content='<%= current_user ? current_user.id : "" %>' name='user-id'/>
 
 <% if current_user %>
   Signed in as <%= decript_string(current_user.email) %> | <%= link_to "Logout", logout_path%>
