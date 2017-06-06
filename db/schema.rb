@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601085338) do
+ActiveRecord::Schema.define(version: 20170605042314) do
 
   create_table "conversations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "sender_id"
@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 20170601085338) do
     t.string "confirm_token"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "provider"
+    t.string "uid"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_foreign_key "messages", "conversations"

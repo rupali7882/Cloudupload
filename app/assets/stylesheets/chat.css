@@ -12,9 +12,9 @@
 }
 
 .chatboxhead {
-    background: #666;
+    background: #333;
     color: white;
-    padding: 0.5rem;
+    padding: 0.9rem;
     overflow: hidden;
 
     border-right: 1px solid rgba(85, 85, 85, 0.87);
@@ -23,7 +23,7 @@
 
 .chatboxhead h1 {
     display: inline;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 700;
 }
 

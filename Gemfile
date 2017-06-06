@@ -31,6 +31,9 @@ gem 'carrierwave', '~> 1.0'
 gem "fog-google"
 gem "google-api-client", "> 0.8.5", "< 0.9"
 gem "mime-types"
+gem "omniauth-google-oauth2", "~> 0.2.1"
+
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

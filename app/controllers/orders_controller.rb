@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
 
   def payment    
     if @order
-      redirect_to @order.paypal_url(order_path(@order))
+      redirect_to @order.paypal_url(orders_path)
     else
       redirect_to orders_url, notice: 'Order was not found.'
     end    
@@ -76,7 +76,7 @@ class OrdersController < ApplicationController
       OrderTransjection.create(:order_id => params[:invoice], :transaction_id => params[:txn_id],
         :ip_address => params[:ipn_track_id])
       puts"++++++PayPal Response+++++++++#{params.inspect}"
-      render :json => {message: 'Request handled successfully.', status: 200}
+      # render :json => {message: 'Request handled successfully.', status: 200}
     end
 
   private

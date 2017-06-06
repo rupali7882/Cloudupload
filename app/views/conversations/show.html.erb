@@ -20,7 +20,9 @@
 <div class="chatboxinput">
   <%= form_for([@conversation, @message], :remote => true, :html => {id: "conversation_form_#{@conversation.id}"} , :authenticity_token => true) do |f| %>
       <%= f.text_area :content, class: "chatboxtextarea", "data-cid" => @conversation.id %>
+      <%#= f.submit "send"%>
   <% end %>
 </div>
 
 <%= subscribe_to conversation_path(@conversation) %>
+

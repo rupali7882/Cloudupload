@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require jquery-3.2.1.min
 //= require chat
-//= require turbolinks
 //= require private_pub
-
+//= require turbolinks
 //= require_tree .

@@ -5,15 +5,14 @@
   </div>
   <%= link_to "order",orders_path%>
 
-
-<% User.all.each_with_index do |user, index| %>
+<% User.where('id != ?',current_user).each_with_index do |user, index| %>
     <tr>       
      <li>
       <td><%= index +=1 %></td>
             <td><%= decript_string(user.email) %></td>
 
       <td>
-        <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+      <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
                     "data-sid" => current_user.id, "data-rip" => user.id %>
       </td>        </li>
     </tr> <br/>

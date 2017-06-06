@@ -1,4 +1,3 @@
-alert(1)
 <% publish_to @path do %>
     var id = "<%= @conversation.id %>";
     var chatbox = $("#chatbox_" + id + " .chatboxcontent");
@@ -14,4 +13,5 @@ alert(1)
     	chatbox.scrollTop(chatbox[0].scrollHeight);
         chatBox.notify();
     }
+    $('.chatboxtextarea').val('')
 <% end %>
